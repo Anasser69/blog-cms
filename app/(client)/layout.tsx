@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Inter,Fira_Code } from "next/font/google";
+import { Inter, Fira_Code } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Navbar";
+import Navbar from "../components/Navbar";
 import { ThemeProvider } from "next-themes";
-import { Provider } from "./utils/Provider";
+import { Provider } from "../utils/Provider";
 
 const inter = Inter({ subsets: ["latin"] });
 const FiraCode = Fira_Code({ subsets: ["latin"] });
@@ -20,7 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${FiraCode.className} h-full bg-amber-50 text-indigo-950 dark:bg-slate-950 dark:text-amber-50 dark:selection:bg-purple-500`}>
+      <body
+        className={`${FiraCode.className} h-full bg-amber-50 text-indigo-950 dark:bg-slate-950 dark:text-amber-50 dark:selection:bg-purple-500`}
+      >
         <Provider>
           <Navbar />
           <main className="mx-auto max-w-5xl px-6">{children}</main>
@@ -29,3 +31,6 @@ export default function RootLayout({
     </html>
   );
 }
+
+
+// const img =
